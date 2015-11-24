@@ -27,6 +27,9 @@ Mat fore_frame(imgHeight, imgWidth, CV_8UC3);
 Mat current_gray(imgHeight, imgWidth, CV_8UC3);
 CompressiveTracker ct[HANDNUM];
 
+VideoWriter writer("VideoTest.avi", CV_FOURCC('M', 'J', 'P', 'G'), 25.0, Size(IMAGEWIDTH, IMAGEHEIGHT));
+
+
 
 void boxInit()
 {

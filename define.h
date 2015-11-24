@@ -1,4 +1,5 @@
 #include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
 #include "compressivetracker.h"
 
 using namespace cv;
@@ -42,6 +43,8 @@ extern Mat skinmask;
 extern Mat fore_frame;
 extern Mat current_gray;
 extern CompressiveTracker ct[HANDNUM];
+
+extern VideoWriter writer;
 
 
 void boxInit();

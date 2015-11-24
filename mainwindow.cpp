@@ -29,10 +29,11 @@ MainWindow::MainWindow(QWidget *parent) :
 }
 
 
-void MainWindow::grabAndShow(){ 
+void MainWindow::grabAndShow(){
+
     yuv2Mat(buffers[0].start,imgWidth,imgHeight);
     //new frame grabed,process start
-
+    writer << frame;
     while(1){
         if(first_flag){
             cvtColor(frame, first_frame, CV_RGB2GRAY);
@@ -79,6 +80,6 @@ void MainWindow::paintEvent(QPaintEvent *)
     //printf("framecount:%d\n",fpscount++);
     ioctl(fd, VIDIOC_DQBUF, &buf);
     grabAndShow();
-    ioctl(fd, VIDIOC_QBUF, &buf)
+    ioctl(fd, VIDIOC_QBUF, &buf);
 }
 
