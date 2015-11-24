@@ -28,7 +28,7 @@ Mat current_gray(imgHeight, imgWidth, CV_8UC3);
 CompressiveTracker ct[HANDNUM];
 
 VideoWriter writer("VideoTest.avi", CV_FOURCC('M', 'J', 'P', 'G'), 25.0, Size(IMAGEWIDTH, IMAGEHEIGHT));
-
+VideoCapture reader("VideoTest.avi");
 
 
 void boxInit()
@@ -59,6 +59,5 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
-
     return a.exec();
 }

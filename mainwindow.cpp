@@ -18,21 +18,27 @@ MainWindow::MainWindow(QWidget *parent) :
 {
 
     ui->setupUi(this);
+    /********************************
     if(init_v4l2() == FALSE)
     {
         printf("init error\n");
     }
-
-    boxInit();
-    v4l2_grab();
+    **********************************/
+    //boxInit();
+    //v4l2_grab();
+    reader >> frame;
+    imshow("frame",frame);
+    waitKey(0);
     grabAndShow();
 }
 
 
 void MainWindow::grabAndShow(){
 
-    yuv2Mat(buffers[0].start,imgWidth,imgHeight);
+
+    //yuv2Mat(buffers[0].start,imgWidth,imgHeight);
     //new frame grabed,process start
+    /****************************************
     writer << frame;
     while(1){
         if(first_flag){
@@ -63,7 +69,7 @@ void MainWindow::grabAndShow(){
     }
     //imshow("ok?",frame);
     //waitKey();
-
+    *********************************************/
     qImg=MatToQImage(frame);
     ui->label->setPixmap(QPixmap::fromImage(qImg));
     ui->label->resize(ui->label->pixmap()->size());
@@ -77,9 +83,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::paintEvent(QPaintEvent *)
 {
+    reader >> frame;
     //printf("framecount:%d\n",fpscount++);
-    ioctl(fd, VIDIOC_DQBUF, &buf);
+    //ioctl(fd, VIDIOC_DQBUF, &buf);
     grabAndShow();
-    ioctl(fd, VIDIOC_QBUF, &buf);
+    //ioctl(fd, VIDIOC_QBUF, &buf);
 }
 
