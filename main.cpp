@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include "mainwindow.h"
+#include "dialogct.h"
+
+
 #include <QApplication>
 #include "define.h"
 #include "compressivetracker.h"
@@ -54,8 +57,10 @@ int main(int argc, char *argv[])
 {
     printf("main start\n");
     QApplication a(argc, argv);
-    MainWindow w;
+    DialogCt w;
     w.show();
+    //MainWindow w;
+    //w.show();
 
     return a.exec();
 }

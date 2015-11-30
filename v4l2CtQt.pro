@@ -17,16 +17,19 @@ SOURCES += main.cpp\
     convert.cpp \
     v4l2grab.cpp \
     compressivetracker.cpp \
-    handfinder.cpp
+    handfinder.cpp \
+    dialogct.cpp
 
 HEADERS  += mainwindow.h \
     v4l2grab.h \
     define.h \
     convert.h \
     compressivetracker.h \
-    handfinder.h
+    handfinder.h \
+    dialogct.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    dialogct.ui
 
 INCLUDEPATH += /usr/local/include\
 /usr/local/include/opencv\
