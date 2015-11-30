@@ -27,8 +27,8 @@ MainWindow::MainWindow(QWidget *parent) :
     //boxInit();
     //v4l2_grab();
     reader >> frame;
-    imshow("frame",frame);
-    waitKey(0);
+    //imshow("frame",frame);
+    //waitKey(0);
     grabAndShow();
 }
 
@@ -84,6 +84,7 @@ MainWindow::~MainWindow()
 void MainWindow::paintEvent(QPaintEvent *)
 {
     reader >> frame;
+    usleep(40000);
     //printf("framecount:%d\n",fpscount++);
     //ioctl(fd, VIDIOC_DQBUF, &buf);
     grabAndShow();

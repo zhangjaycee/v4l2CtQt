@@ -44,7 +44,7 @@ extern Mat fore_frame;
 extern Mat current_gray;
 extern CompressiveTracker ct[HANDNUM];
 
-extern VideoWriter writer;
+//extern VideoWriter writer;
 extern VideoCapture reader;
 
 
