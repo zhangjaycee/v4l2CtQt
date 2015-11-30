@@ -79,6 +79,6 @@ void MainWindow::paintEvent(QPaintEvent *)
     //printf("framecount:%d\n",fpscount++);
     ioctl(fd, VIDIOC_DQBUF, &buf);
     grabAndShow();
-    ioctl(fd, VIDIOC_QBUF, &buf)
+    ioctl(fd, VIDIOC_QBUF, &buf);
 }
 

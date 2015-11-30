@@ -1,4 +1,4 @@
-
+#define VIDEO_DEVICE "/dev/video0"
 #include<stdio.h>
 #include<string.h>
 #include<unistd.h>
@@ -33,7 +33,7 @@ int init_v4l2(void)
 {
     int i;
     int ret = 0;
-    char * FILE_VIDEO="/dev/video4";
+    char * FILE_VIDEO= VIDEO_DEVICE;
     printf("%s\n",FILE_VIDEO);
     //打开设备
     if ((fd = open(FILE_VIDEO, O_RDWR)) == -1){
